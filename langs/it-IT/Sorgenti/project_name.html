@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="it-IT">
+	<head>
+        <title>Sorgente: (name)</title>
+		<link rel="stylesheet" type="text/css" href="../../../Stylesheets/sources.css">
+	</head>
+	<body>
+        <h1>(name) (OS(s))</h1>
+        <div class="fileTree">
+        	<p style="font-family: 'Tex Gyre Cursor'; width: auto; heigth: auto;">
+            (name)/<br>
+            &#9500 <a href="#main.cpp">main.cpp</a><br>
+            &#9500 <a href="#functions.h">functions.h</a><br>
+            &#9492 help.txt<br>
+        	</p>
+        </div>
+		<h3><a name="main.cpp"></a>main.cpp</h3>
+		<table align="center" style="width: 1000px; border-collapse: collapse;">
+			<tr>
+				<th class="lineNum"> 1 </th><th class="code"><code>#include&nbsp;<iostream></code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 2 </th><th class="code"><code>#include&nbsp;<string></code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 3 </th><th class="code"><code>#include&nbsp;"functions.h"</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 4 </th><th class="code"><code>#define&nbsp;funcs&nbsp;6</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 5 </th><th class="code"><code></code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 6 </th><th class="code"><code>using&nbsp;namespace&nbsp;std;</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 7 </th><th class="code"><code></code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 8 </th><th class="code"><code>string&nbsp;i;</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 9 </th><th class="code"><code>string&nbsp;version&nbsp;=&nbsp;"1.0&nbsp;alpha";</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 10 </th><th class="code"><code></code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 11 </th><th class="code"><code>int&nbsp;main()&nbsp;{</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 12 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(getOsName()&nbsp;==&nbsp;"macOS"&nbsp;||&nbsp;getOsName()&nbsp;==&nbsp;"Linux"){</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 13 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout&nbsp;<<&nbsp;"\nWelcome&nbsp;on&nbsp;the&nbsp;Edo's&nbsp;ToolKit.&nbsp;(v"&nbsp;<<&nbsp;version&nbsp;<<&nbsp;")\n"</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 14 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"There&nbsp;are&nbsp;"&nbsp;<<&nbsp;funcs&nbsp;<<&nbsp;"&nbsp;available&nbsp;functions.\n"</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 15 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"To&nbsp;start,&nbsp;type&nbsp;a&nbsp;command.\n"<<&nbsp;endl;</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 16 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while&nbsp;(true)&nbsp;{</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 17 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;function,&nbsp;arguments;</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 18 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout&nbsp;<<&nbsp;"ETK&nbsp;>&nbsp;";</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 19 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;getline(cin,&nbsp;i);</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 20 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;split(i,&nbsp;function,&nbsp;arguments);</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 21 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(i&nbsp;==&nbsp;"")&nbsp;{</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 22 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout&nbsp;<<&nbsp;"ERROR:&nbsp;Missing&nbsp;command."&nbsp;<<&nbsp;endl;</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 23 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;if&nbsp;(i&nbsp;==&nbsp;"help"){</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 24 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout&nbsp;<<&nbsp;help()&nbsp;<<&nbsp;endl;</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 25 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;if&nbsp;(i&nbsp;==&nbsp;"netinfo")&nbsp;{</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 26 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout&nbsp;<<&nbsp;netinfo()&nbsp;<<&nbsp;endl;</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 27 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;if&nbsp;(i&nbsp;==&nbsp;"quit"){</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 28 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 29 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;if&nbsp;(function&nbsp;==&nbsp;"sys")&nbsp;{</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 30 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout&nbsp;<<&nbsp;sys(i)&nbsp;<<&nbsp;endl;</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 31 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;if&nbsp;(i&nbsp;==&nbsp;"clear")&nbsp;{</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 32 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout&nbsp;<<&nbsp;clear()&nbsp;<<&nbsp;endl;</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 33 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;if&nbsp;(function&nbsp;==&nbsp;"refi")&nbsp;{</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 34 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout&nbsp;<<&nbsp;refi(i)&nbsp;<<&nbsp;endl;</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 35 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;if&nbsp;(i&nbsp;==&nbsp;"getpath")&nbsp;{</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 36 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout&nbsp;<<&nbsp;getexepath()&nbsp;<<&nbsp;endl;</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 37 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 38 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout&nbsp;<<&nbsp;"ERROR:&nbsp;Unknown&nbsp;command&nbsp;\""&nbsp;<<&nbsp;i&nbsp;<<&nbsp;"\"."&nbsp;<<&nbsp;endl;</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 39 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 40 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 41 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 42 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout&nbsp;<<&nbsp;"\nTHIS&nbsp;VERSION&nbsp;IS&nbsp;ONLY&nbsp;FOR&nbsp;macOS&nbsp;AND&nbsp;Linux!!\n"&nbsp;<<&nbsp;endl;</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 43 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;}</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 44 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;0;</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 45 </th><th class="code"><code>}</code></th>
+			<tr>
+		<table>
+		<h3><a name="functions.h"></a>functions.h</h3>
+		<table align="center" style="width: 1000px; border-collapse: collapse;">
+			<tr>
+				<th class="lineNum"> 1 </th><th class="code"><code>#ifndef&nbsp;FUNCTIONS_H</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 2 </th><th class="code"><code>#define&nbsp;FUNCTIONS_H</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 3 </th><th class="code"><code>#include&nbsp;<iostream></code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 4 </th><th class="code"><code>#include&nbsp;<string.h></code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 5 </th><th class="code"><code>#include&nbsp;<fstream></code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 6 </th><th class="code"><code>#include&nbsp;<sys/ioctl.h></code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 7 </th><th class="code"><code>#include&nbsp;<limits.h></code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 8 </th><th class="code"><code>#include&nbsp;<unistd.h></code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 9 </th><th class="code"><code></code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 10 </th><th class="code"><code>using&nbsp;namespace&nbsp;std;</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 11 </th><th class="code"><code></code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 12 </th><th class="code"><code>string&nbsp;getOsName()</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 13 </th><th class="code"><code>{</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 14 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;#ifdef&nbsp;_WIN32</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 15 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;"Windows&nbsp;32bit";</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 16 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;#elif&nbsp;_WIN64</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 17 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;"Windows&nbsp;64bit";</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 18 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;#elif&nbsp;__unix&nbsp;||&nbsp;__unix__</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 19 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;"Unix";</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 20 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;#elif&nbsp;__APPLE__&nbsp;||&nbsp;__MACH__</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 21 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;"macOS";</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 22 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;#elif&nbsp;__linux__</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 23 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;"Linux";</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 24 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;#elif&nbsp;__FreeBSD__</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 25 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;"FreeBSD";</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 26 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;#else</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 27 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;"Other";</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 28 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;#endif</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 29 </th><th class="code"><code>}</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 30 </th><th class="code"><code></code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 31 </th><th class="code"><code>string&nbsp;getexepath()&nbsp;{</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 32 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;char&nbsp;result[&nbsp;PATH_MAX&nbsp;];</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 33 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;ssize_t&nbsp;count&nbsp;=&nbsp;readlink(&nbsp;"/proc/self/exe",&nbsp;result,&nbsp;PATH_MAX&nbsp;);</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 34 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;string(&nbsp;result,&nbsp;(count&nbsp;>&nbsp;0)&nbsp;?&nbsp;count&nbsp;:&nbsp;0&nbsp;);</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 35 </th><th class="code"><code>}</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 36 </th><th class="code"><code></code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 37 </th><th class="code"><code>void&nbsp;split&nbsp;(string&nbsp;input1,&nbsp;string&nbsp;&function,&nbsp;string&nbsp;&arguments){</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 38 </th><th class="code"><code></code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 39 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;function.erase(0,&nbsp;function.length());</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 40 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;arguments.erase(0,&nbsp;arguments.length());</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 41 </th><th class="code"><code></code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 42 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;bool&nbsp;args&nbsp;=&nbsp;false;</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 43 </th><th class="code"><code></code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 44 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;undefined;</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 45 </th><th class="code"><code></code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 46 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(int&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;<&nbsp;input1.length();&nbsp;i++){</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 47 </th><th class="code"><code></code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 48 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(input1[i]&nbsp;==&nbsp;'&nbsp;')&nbsp;{</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 49 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(i&nbsp;==&nbsp;0)&nbsp;{</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 50 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;input1.erase(0,&nbsp;1);</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 51 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;if&nbsp;(i&nbsp;==&nbsp;(input1.length()&nbsp;-&nbsp;1))&nbsp;{</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 52 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;input1.erase((input1.length()&nbsp;-&nbsp;1),&nbsp;1);</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 53 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 54 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!args)&nbsp;{</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 55 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(int&nbsp;o&nbsp;=&nbsp;0;&nbsp;o&nbsp;<&nbsp;undefined.length();&nbsp;o++)</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 56 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function.push_back(undefined[o]);</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 57 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;args&nbsp;=&nbsp;true;</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 58 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;if&nbsp;(args)&nbsp;{</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 59 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(int&nbsp;u&nbsp;=&nbsp;0;&nbsp;u&nbsp;<&nbsp;undefined.length();&nbsp;u++)</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 60 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arguments.push_back(undefined[u]);</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 61 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 62 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 63 </th><th class="code"><code></code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 64 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 65 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(i&nbsp;==&nbsp;(input1.length()&nbsp;-&nbsp;1))&nbsp;{</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 66 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;undefined.push_back(input1[i]);</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 67 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!args)</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 68 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(int&nbsp;u&nbsp;=&nbsp;0;&nbsp;u&nbsp;<&nbsp;undefined.length();&nbsp;u++)</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 69 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function.push_back(undefined[u]);</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 70 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 71 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(int&nbsp;e&nbsp;=&nbsp;0;&nbsp;e&nbsp;<&nbsp;undefined.length();&nbsp;e++)</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 72 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arguments.push_back(undefined[e]);</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 73 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 74 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;undefined.push_back(input1[i]);</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 75 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 76 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 77 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;}</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 78 </th><th class="code"><code>}</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 79 </th><th class="code"><code></code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 80 </th><th class="code"><code>string&nbsp;GetStdout(string&nbsp;cmd)&nbsp;{</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 81 </th><th class="code"><code></code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 82 </th><th class="code"><code>string&nbsp;data;</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 83 </th><th class="code"><code>FILE&nbsp;*&nbsp;stream;</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 84 </th><th class="code"><code>const&nbsp;int&nbsp;max_buffer&nbsp;=&nbsp;256;</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 85 </th><th class="code"><code>char&nbsp;buffer[max_buffer];</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 86 </th><th class="code"><code>cmd.append("&nbsp;2>&1");</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 87 </th><th class="code"><code></code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 88 </th><th class="code"><code>stream&nbsp;=&nbsp;popen(cmd.c_str(),&nbsp;"r");</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 89 </th><th class="code"><code>if&nbsp;(stream)&nbsp;{</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 90 </th><th class="code"><code>while&nbsp;(!feof(stream))</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 91 </th><th class="code"><code>if&nbsp;(fgets(buffer,&nbsp;max_buffer,&nbsp;stream)&nbsp;!=&nbsp;NULL)&nbsp;data.append(buffer);</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 92 </th><th class="code"><code>pclose(stream);</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 93 </th><th class="code"><code>}</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 94 </th><th class="code"><code>return&nbsp;data;</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 95 </th><th class="code"><code>}</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 96 </th><th class="code"><code></code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 97 </th><th class="code"><code>int&nbsp;getEnvLines()&nbsp;{</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 98 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;struct&nbsp;winsize&nbsp;w;</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 99 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;ioctl(0,&nbsp;TIOCGWINSZ,&nbsp;&w);</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 100 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;w.ws_row;</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 101 </th><th class="code"><code>}</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 102 </th><th class="code"><code></code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 103 </th><th class="code"><code>//&nbsp;Functions...&nbsp;-------------------------------------------------------</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 104 </th><th class="code"><code>string&nbsp;help()&nbsp;{</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 105 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;ifstream&nbsp;help;</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 106 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;path&nbsp;=&nbsp;getexepath();</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 107 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;path.erase(path.length()-13,&nbsp;13);</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 108 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;help.open(path+"help.txt");</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 109 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;line;</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 110 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;result;</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 111 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;result.append("/help.txt&nbsp;-------------------------------------------------\n");</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 112 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;while&nbsp;(getline(help,&nbsp;line))</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 113 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result.append(line+"\n");</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 114 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;result.append("===========================================================");</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 115 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;help.close();</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 116 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;result;</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 117 </th><th class="code"><code>}</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 118 </th><th class="code"><code></code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 119 </th><th class="code"><code>string&nbsp;netinfo()&nbsp;{</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 120 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;result;</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 121 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;public_ip&nbsp;=&nbsp;GetStdout("curl&nbsp;-s&nbsp;ipecho.net/plain;");</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 122 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;status;</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 123 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(system("ping&nbsp;-c4&nbsp;-s1&nbsp;-i&nbsp;0.3&nbsp;www.google.com&nbsp;>/dev/null&nbsp;2>&1"))&nbsp;{</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 124 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;status&nbsp;=&nbsp;"NOT&nbsp;CONNECTED";</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 125 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result&nbsp;=&nbsp;"Internet&nbsp;connection&nbsp;status:&nbsp;"+status+"\nYour&nbsp;public&nbsp;IP:&nbsp;(not&nbsp;available)";</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 126 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;result;</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 127 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 128 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;status&nbsp;=&nbsp;"CONNECTED";</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 129 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result&nbsp;=&nbsp;"Internet&nbsp;connection&nbsp;status:&nbsp;"+status+"\nYour&nbsp;public&nbsp;IP:&nbsp;"+public_ip;</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 130 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result.erase(result.length()-1,&nbsp;1);</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 131 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;result;</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 132 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;}</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 133 </th><th class="code"><code>}</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 134 </th><th class="code"><code></code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 135 </th><th class="code"><code>string&nbsp;sys(string&nbsp;command)&nbsp;{</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 136 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;command.erase(0,&nbsp;4);</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 137 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(command&nbsp;==&nbsp;"")</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 138 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;"Usage:&nbsp;sys&nbsp;[command]";</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 139 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;GetStdout(command);</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 140 </th><th class="code"><code>}</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 141 </th><th class="code"><code></code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 142 </th><th class="code"><code>string&nbsp;clear()&nbsp;{</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 143 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;result;</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 144 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(int&nbsp;i&nbsp;=&nbsp;1;&nbsp;i&nbsp;<=&nbsp;getEnvLines()+1;&nbsp;i++)&nbsp;{</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 145 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result.append("\n");</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 146 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;}</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 147 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;result;</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 148 </th><th class="code"><code>}</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 149 </th><th class="code"><code></code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 150 </th><th class="code"><code>string&nbsp;refi(string&nbsp;file)&nbsp;{</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 151 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;file.erase(0,&nbsp;5);</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 152 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(file&nbsp;==&nbsp;"")</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 153 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;"Usage:&nbsp;refi&nbsp;[path/to/file]";</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 154 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;ifstream&nbsp;f;</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 155 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(getOsName()&nbsp;==&nbsp;"Linux")&nbsp;{</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 156 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;path&nbsp;=&nbsp;getexepath();</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 157 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;path.erase(path.length()-13,&nbsp;13);</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 158 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f.open(path+file);</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 159 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(f)&nbsp;{</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 160 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;separator&nbsp;=&nbsp;"-----------------------------------------------------------\n";</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 161 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;separator.erase(0,&nbsp;file.length()&nbsp;+&nbsp;1);</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 162 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;line;</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 163 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;filecontent;</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 164 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;filecontent.append(file+"&nbsp;"+separator);</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 165 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while&nbsp;(getline(f,&nbsp;line))</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 166 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;filecontent.append(line+"\n");</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 167 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;filecontent.append("===========================================================");</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 168 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f.close();</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 169 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;filecontent;</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 170 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 171 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;"ERROR:&nbsp;Specified&nbsp;file&nbsp;does&nbsp;not&nbsp;exist&nbsp;or&nbsp;is&nbsp;unreadable.";</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 172 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;(getOsName()&nbsp;==&nbsp;"macOS")&nbsp;{</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 173 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f.open(file);</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 174 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(f)&nbsp;{</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 175 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;separator&nbsp;=&nbsp;"-----------------------------------------------------------\n";</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 176 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;separator.erase(0,&nbsp;file.length()&nbsp;+&nbsp;1);</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 177 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;line;</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 178 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;filecontent;</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 179 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;filecontent.append(file+"&nbsp;"+separator);</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 180 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while&nbsp;(getline(f,&nbsp;line))</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 181 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;filecontent.append(line+"\n");</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 182 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;filecontent.append("===========================================================");</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 183 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f.close();</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 184 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;filecontent;</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 185 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 186 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;"ERROR:&nbsp;Specified&nbsp;file&nbsp;does&nbsp;not&nbsp;exist&nbsp;or&nbsp;is&nbsp;unreadable.";</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 187 </th><th class="code"><code>&nbsp;&nbsp;&nbsp;&nbsp;}</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 188 </th><th class="code"><code>}</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 189 </th><th class="code"><code>/*</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 190 </th><th class="code"><code>string&nbsp;speedtest()&nbsp;{</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 191 </th><th class="code"><code></code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 192 </th><th class="code"><code>}</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 193 </th><th class="code"><code>*/</code></th>
+			<tr>
+			<tr>
+				<th class="lineNum"> 194 </th><th class="code"><code>#endif&nbsp;/*&nbsp;FUNCTIONS_H&nbsp;*/</code></th>
+			<tr>
+		<table>
+
+    </body>
+</html>

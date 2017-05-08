@@ -1,0 +1,87 @@
+body {
+	background-color: #f9f9f9;
+}
+
+h1 {
+    user-select: none;
+	color: black;
+	font-size: 40px;
+	font-family: 'Helvetica Neue';
+    font-weight: lighter;
+    letter-spacing: 3px;
+    border-bottom: 1px solid black;
+}
+h2 {
+    user-select: none;
+    color: black;
+	text-align: center;
+	font-size: 30px;
+	font-family: 'Helvetica Neue';
+    font-weight: lighter;
+    letter-spacing: 3px;
+}
+
+h3 {
+    user-select: none;
+    color: black;
+	text-align: center;
+	font-size: 50px;
+	font-family: "Walkway";
+    font-weight: lighter;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('../Items/Fonts/HelveticaNeue.ttf');
+}
+
+@font-face {
+    font-family: 'Tex Gyre Cursor';
+    src: url('../Items/Fonts/texgyrecursor-regular.otf')
+}
+
+@font-face {
+    font-family: "Walkway";
+    src: url("../Items/Fonts/Walkway_Bold.ttf");
+}
+
+p {
+	color: black;
+    font-family: 'Courier New';
+}
+
+code {
+    color: cornsilk;
+    font-size: 16px;
+    font-family: "Tex Gyre Cursor";
+}
+
+.divLang {
+    position: fixed;
+    right: 5px;
+    top: 5px;
+}
+
+th.lineNum {
+    user-select: none;
+    font-family: monospace;
+    width: auto;
+}
+
+.code {
+    padding: 2px;
+    text-align: left;
+    background-color: cadetblue;
+}
+
+div.fileTree {
+    left: 50%;
+    width: 25%;
+    height: auto;
+	float: top;
+}
+
+a {
+	text-decoration: none;
+	color: blue;
+}
